@@ -1,0 +1,109 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>系统介绍</h1>
+</hgroup>
+
+<div class="with-padding">
+
+	<h3 class="thin">背景</h3>
+
+	<p>作者从事软件开发行业多年,有幸参与过比较多的系统设计与开发，从最初的C/S，都现在B/S和云系统。
+	但是只要是有服务端的系统，都少不了复杂的后台管理功能。每次系统开发，都会重新设计并开发新的一套后台，浪费很多人力和物力。
+	有时候作者自己也会接一些私活，嘘......其实这个不能说出来，也都会做这种搭建后台系统的重复性工作，完全已经成为了一个体力活。
+	所以，为了方便自己，也为了方便更多其他的朋友更快的开发出自己的定制系统，我把一些基本的需求(见<a href="content/module/login-intro.html">模块使用介绍</a>)做了个包装，以后有类似的开发任务，
+	就基于这个平台来进行开发，会大幅度的减少开发工作量。开发人员可以把工作重点放在业务逻辑上，而不是前端界面的设计上，也不用花大量的时间调试浏览器的兼容性等体力工作上。
+	当然，现在市面上有很多快速开发系统，有不少还能提供拖拽方式建成系统的，作者也调研过一些，但是感觉学习成本有点高，系统的可定制性不高，而且不能提高自身的技术水平，
+	所以作者本人也不太爱用这种过于傻瓜，且定制性比较差的快速开发平台。
+	</p>
+	<p>
+	所以，Puma framework适用于了解Java语言的，并且习惯自己编写后台业务逻辑的程序猿们，如果您有中小型项目要开发，而且时间比较紧迫的话，不妨试试这个平台，应该能加快开发速度，并且功能和性能有一定保证。
+	</p>
+	<p>
+	Puma framework的宗旨是：<span style="font-size:16px;font-weight:bold;">让Java系统开发变的更简单一点！</span>如果您对该framework有任何建议，欢迎联系作者，
+	作者会尽力改进和完善。
+	</p>
+	<p>
+		由于该framework目前由作者一人完成，所以难免有不足之处，如果有任何不合理的地方，也欢迎大家批评指正！
+	</p>
+
+	<h3 class="thin">系统介绍</h3>
+	<p>
+		Puma framework提供了系统开发的基础功能，包括系统登录、用户管理、资源管理、角色管理、菜单管理和皮肤管理等六大基础模块。
+		开发人员可以很容易的基于这些基础功能开发出属于自己的业务系统。
+	</p>
+	
+	<h4 class="thin">前端</h4>
+	<p>
+		Puma framework前端采用HTML+JQuery+JEasyUI开发，采用标签的操作形式，所有内容加载采用Ajax方式，实现无页面跳转的操作。
+		打开的标签内容由开发人员自己决定，可以是自己编写的模块，也可以是外部的网页链接，如何打开标签页，可以在菜单管理模块非常简单的设置。
+		<br>
+		<br>1. 整个界面分为四个主要区域：系统快速菜单区域、系统标签区域、导航菜单区域以及系统内容区域，见下图：
+		<br><img alt="系统界面" src="img/puma/main.jpg" width="800px">
+		<br>
+		<br>2. 系统的菜单可以在后台自由定制，并且支持拖拽，名称可以实时编辑
+		<br><img alt="系统菜单管理" src="img/puma/menu-config.jpg" width="800px">
+		<br><img alt="系统菜单管理" src="img/puma/menu-config-add-custom.jpg" width="800px">
+		<br>
+		<br>3. 系统的标签可以在后台自由定制
+		<br><img alt="系统菜单管理" src="img/puma/menu-tab-config.jpg" width="800px">
+		<br>
+		<br>4. 系统的皮肤可以自由实时变换
+		<br><img alt="系统菜单管理" src="img/puma/skin-master.jpg" width="800px">
+		<br>
+		<br>5. 提供常用控件，使用简单、灵活
+		<br><img alt="系统菜单管理" src="img/puma/widgets.jpg" width="500px">
+		<br>
+		<br>6. 前端JS，CSS按需动态加载
+		<br>
+		<br>7. 前端界面内容自适应窗口大小
+		<br>
+		<br>8. HTML，JS，CSS优化
+		<br>
+		<br>9. 支持浏览器的回退和前进按钮(浏览历史记录)
+		<br>
+		<br>10. 滚动条自动隐藏，鼠标经过才显示，保持界面的简洁
+		<br>
+		<br>11. CSS动态效果（IE9以下不支持）
+		<br>
+		<br>12. 异常的统一处理
+		<br>
+		<br>13. 插件模块图标自定义
+		
+	</p>
+	
+	<h4 class="thin">后端</h4>
+	<p>
+		Puma framework后端采用Java语言开发，采用SpringMVC+SpringData+SpringSecurity+Hibernate实现。
+		集成了
+		<br>
+		<br>1. EHCache缓存模块、
+		<br>
+		<br>2. Log4J系统日志模块
+		<br>
+		<br>3. 用户操作日志模块(AspectJ实现)
+		<br>
+		<br>4. Quartz任务管理模块
+		<br>
+		<br>5. RedisNoSQL模块(因为有些数据读取比较频繁的操作可以利用Redis)
+		<br>
+		<br>6. Hessian远程调用模块(供学习使用)
+		<br>
+		<br>7. JSoup网页分析模块,邮件发送模块
+		<br>
+		<br>8. 飞信信息发送模块(供学习使用)
+		<br>
+		<br>
+		<br>系统开发从此简单起来，因为：
+		<br>
+		<br>1. 利用Spring MVC，可以非常容易的利用标注来定义自己的controller，不用再管理一堆xml文件了。
+		<br>
+		<br>2. 使用Spring Data，对数据库的操作更加简单。
+		<br>
+		<br>3. 采用了Spring Security，权限控制控制到controller级别，并且只要用户定义了controller之后，启动启动的时候会自动扫描所有的controller，并将没有添加的数据库的
+		controller自动添加到数据库中。开发人员之需要在前端将controller添加到角色里就可以实现权限的控制。
+		<br>
+		<br>4. 采用简单的插件方式，用户只需要编写5个简单的类(IPumaPlugin, Dao, Domain, Controller, Service)，就可以实现一个对数据库的操作的插件，并且该插件会在系统启动的时候自动添加到数据库中，由前端进行管理。
+		<br>
+		<br>5. 编写了minify-html的maven插件，项目发布前自动对ftl，HTML，js，css进行压缩
+	</p>
+</div>

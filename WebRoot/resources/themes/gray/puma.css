@@ -1,0 +1,24 @@
+.frame-main {
+    border-top:solid 4px #135ba5;
+}
+.top-text{
+	color:white;
+}
+.skin-right-hack, body {
+    background-color: #FFFFFF;
+}
+
+.seperator-li {
+    color:#D7C8BB;
+}
+
+/* .frame-main-content  */.datagrid-row{
+	height:40px;
+}
+/* .frame-main-content  */.datagrid-body td{
+	border-style: solid;
+    border-width: 0 0 1px 0;
+}
+/* .frame-main-content  */.datagrid-cell, .frame-main-content .datagrid-cell-group, .frame-main-content .datagrid-cell-rownumber{
+	font-size:14px;
+}

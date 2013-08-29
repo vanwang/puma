@@ -1,0 +1,71 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>角色管理</h1>
+</hgroup>
+
+<div class="with-padding">
+	<div class="boxed left-border large-margin-bottom" id="intro">
+		<h3 class="thin small-margin-bottom"><a name="000" target="_self">目录</a></h3>
+		<ul class="bullet-list">
+			<li><a href="#001" target="_self">实现方式</a></li>
+			<li><a href="#002" target="_self">新增角色</a></li>
+			<li><a href="#003" target="_self">编辑角色</a></li>
+			<li><a href="#004" target="_self">删除角色</a></li>
+			<li><a href="#005" target="_self">角色排序</a></li>
+			<li><a href="#006" target="_self">为角色添加资源</a></li>
+			<li><a href="#007" target="_self">刷新资源树</a></li>
+			<li><a href="#008" target="_self">全选、全不选、展开、收缩资源树操作</a></li>
+		</ul>
+	</div>
+			
+	<h3 class="thin"><a href="#000" name="001">实现方式</a></h3>
+	<p>
+		Puma framework的角色管理模块如下图所示，该模块提供对角色的新增、修改、删除、数据刷新以及角色树的展开、收缩、全选、反选功能。
+		角色对应的资源可以在<a href="#content/module-intro/resource-management/resource-management.html"> 资源管理模块 </a>中进行修改。
+		<br>前端采用HTML+CSS+JQuery+JEasyui实现。
+		<br>后台登录采用Spring framework + Spring Data + Hibernate实现。
+	</p>
+	<img alt="角色管理界面" src="img/puma/role-management.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="002">新增角色</a></h3>
+	1. 点击角色管理界面中的"新增"按钮，弹出新增角色的表单窗口。
+	<br><br>2. 新增角色的表单窗口有1个必填项，角色名称。
+	<ul>
+		<li>角色名称是管理员可以自己定义的，容易理解该角色的名称。</li>
+		<li>是否启用复选框是表示该角色所对应的所有资源进行权限判断。</li>
+		<li>是否后台角色，该复选框目前无作用，属于预留功能。有的需要可能要将资源分成后台管理端资源和前台系统用户的资源，避免前台用户能够访问后台资源。</li>
+		<li>描述：对该角色的简单描述。</li>
+	</ul>
+	3. 用户输入完整信息后，点击"保存"按钮，如果所有表单元素正确，提示保存进度信息，保存成功后，提示保存成功，并且所添加的角色记录在所选分组的最上，页面不跳转。
+	<br><br><img alt="新增角色界面" src="img/puma/role-management-add.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="003">编辑角色</a></h3>
+	1. 选择要编辑的角色记录，点击角色管理界面中的"编辑"按钮，弹出编辑角色的表单窗口。
+	<br><br>2. 鼠标双击要编辑的角色记录，弹出编辑角色的表单窗口。
+	<br><br>3. 角色编辑的表单自动加载所选择角色的相关信息。
+	<br><br>4. 如果没有选择角色，就点击了"编辑"按钮，需要提示用户先选择角色后，再进行编辑工作。
+	<br><br>6. 用户修改完信息后，点击"保存"按钮，如果所有表单元素正确，提示保存进度信息，保存成功后，提示保存成功，并且所编辑的角色记录在当前表单原位置，页面不跳转。
+	<br><br><img alt="编辑角色界面" src="img/puma/role-management-edit.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="004">删除角色</a></h3>
+	1. 选择要删除的角色，点击角色管理界面中的"删除"按钮，弹出确认窗口。
+	<br><br>2. 点击"确认"按钮，提示删除进度信息，删除成功后，提示删除角色成功，页面不跳转
+	<br><br>3. 点击"取消"按钮，确认窗口消失。
+	<br><br><img alt="删除角色界面" src="img/puma/role-management-delete.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="005">角色排序</a></h3>
+	1. 可以方便的对系统角色进行排序，管理员可以按照自己的喜好排列各个角色的顺序。直接鼠标左键点击要排序的角色，拖拽到指定位置，释放鼠标左键，角色顺序自动保存。
+	<br><br><img alt="角色排序界面" src="img/puma/role-management-order.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="006">为角色添加资源</a></h3>
+	1. 选择要添加资源的角色，右方的资源树会加载所选角色的相关资源。
+	2. 选择要关联到该角色的资源，可以利用全选功能，选择完成后，点击右边工具栏中的保存按钮，即可保存关联。
+	<br><br><img alt="关联角色资源界面" src="img/puma/role-management-resource.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="007">刷新资源树</a></h3>
+	1. 点击角色管理界面右方板块的"刷新"按钮，资源树重新加载。
+	
+	<h3 class="thin"><a href="#000" name="008">全选、全不选、展开、收缩资源树操作</a></h3>
+	1. 点击资源管理界面中的"全部展开"或者"全部收起"按钮，资源树相应的全部展开或者全部收起。
+	<br><br><img alt="资源树操作界面" src="img/puma/role-management-collapse.jpg" width="800px">
+</div>

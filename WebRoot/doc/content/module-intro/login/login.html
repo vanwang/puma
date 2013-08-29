@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>系统登录</h1>
+</hgroup>
+
+<div class="with-padding">
+	<h3 class="thin">实现方式</h3>
+	<p>
+		Puma framework的登录模块如下图所示，用户输入用户名、密码和验证码即可登录。
+		<br>前端采用HTML+JQuery+JQuery cookie插件实现。
+		<br>后台登录采用Spring Security实现，由于Spring Security默认的登录方式是表单提交，
+		会产生页面的跳转，所以实现了Spring Security的<span style="font-weight:bold;">AuthenticationSuccessHandler</span>和
+		<span style="font-weight:bold;">AjaxAuthenticationFailureHandler</span>接口，用ajax的方式来进行用户登录验证。
+		<div class="wrapped margin-bottom left-icon icon-info-round">
+			<span style="font-weight:bold;">注</span>：1.0 Beta版本暂时不提供用户注册和找回密码功能,会在1.0 Release中添加。
+		</div>
+	</p>
+	<h3 class="thin">登录功能点介绍</h3>
+	1. 用户输入正确的用户名、密码和验证码，成功登入系统，页面跳转。
+	<br><br>2. 用户输入错误的用户名或者密码，提示用户名密码错误，页面不跳转。
+	<br><br>3. 用户输入错误的验证码，提示验证码输入错误，页面不跳转。
+	<br><br>4. 用户看不清验证码，可以点击"看不清"连接刷新验证码图片，页面不跳转。
+	<br><br>5. 用户表单填写不完整，提示相应的输入域为必填项，页面不跳转。
+	<br><br>6. 用户勾选记住密码，打开页面，输入用户名后会自动补充密码，页面不跳转。
+	<br><br>7. 用户在别的地方登陆后，会将当前的用户提出系统，并提示用户已经在别的地方登陆，页面不跳转。
+	<br><br>8. 用户10分钟内不进行任何操作，会话过期，返回到登陆界面，并提示会话已过期。
+	<br><br><img alt="系统界面" src="img/puma/login.jpg" width="800px">
+
+</div>

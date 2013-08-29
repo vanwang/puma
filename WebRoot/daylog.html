@@ -1,0 +1,344 @@
+<meta charset="UTF-8">
+<div class="easyui-layout" data-options="fit:true,noheader:true">
+	<div data-options="region:'north'">
+		<div id="user-management-toolbar-id" style="padding:1px 2px;border-bottom:solid 1px #ddd;">  
+			<a id="day-log-management-toolbar-add-agenda-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'">新增日程</a>
+			<a id="day-log-management-toolbar-look-around-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'">随便看看</a>
+			<span class="toolbar-seperator"></span>
+			<a id="friend-list-show-btn-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'">好友列表</a>
+			<a id="day-log-management-toolbar-add-friend-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-remove'">添加好友</a>
+			<span class="toolbar-seperator"></span>
+		    <a id="day-log-management-toolbar-my-agenda-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'">我的日程</a>
+		    <a id="day-log-management-toolbar-my-message-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-search'">我的通知</a>
+		    <span class="toolbar-seperator"></span>
+		    <a id="day-log-management-toolbar-refresh-id"  class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-refresh'">刷新</a>
+		</div>
+	</div>
+	<div id="daylog-main-content-id" data-options="region:'center'">
+		<div id="friend-list-id" style="float:left;width:0px;height:100%;">
+			<div style="padding:0px;height:23px;">
+				<input id="ss" class="easyui-searchbox" data-options="width:250,height:25,prompt:'请输入查询条件',menu:'#day-log-user-list-menu'"></input>
+				<div id="day-log-user-list-menu">  
+			        <div data-options="name:'all'">模糊</div>  
+			        <div data-options="name:'sports'">邮箱</div>
+			        <div data-options="name:'sports'">昵称</div>
+			        <div data-options="name:'sports'">学号</div>  
+			    </div> 
+			</div>
+			<div id="slider" style="float:left;">
+				<div class="slider-content">
+					<ul>
+						<li id="a"><a name="a" class="title">A</a>
+							<ul>
+								<li><a >Adam</a></li>
+								<li><a >Alex</a></li>
+								<li><a >Ali</a></li>
+								<li><a >Apple</a></li>
+								<li><a >Arthur</a></li>
+								<li><a >Ashley</a></li>
+							</ul>
+						</li>
+						<li id="b"><a name="b" class="title">B</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="c"><a name="c" class="title">c</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="d"><a name="d" class="title">d</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="e"><a name="e" class="title">E</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="f"><a name="f" class="title">f</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="g"><a name="g" class="title">g</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="h"><a name="h" class="title">h</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="i"><a name="i" class="title">i</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="j"><a name="j" class="title">j</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="k"><a name="k" class="title">k</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="l"><a name="l" class="title">l</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="m"><a name="m" class="title">m</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="n"><a name="n" class="title">n</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="o"><a name="o" class="title">o</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="p"><a name="p" class="title">p</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="q"><a name="q" class="title">q</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="r"><a name="r" class="title">r</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="s"><a name="s" class="title">s</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="t"><a name="t" class="title">t</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="u"><a name="u" class="title">u</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="v"><a name="v" class="title">v</a>
+							<ul>
+								<li><a >Barry</a></li>
+								<li><a >Becky</a></li>
+								<li><a >Biff</a></li>
+								<li><a >Billy</a></li>
+								<li><a >Bozarking</a></li>
+								<li><a >Bryan</a></li>
+							</ul>
+						</li>
+						<li id="w"><a name="w" class="title">w</a>
+							<ul>
+								<li><a >Calista</a></li>
+								<li><a >Cathy</a></li>
+								<li><a >Chris</a></li>
+								<li><a >Cinderella</a></li>
+								<li><a >Corky</a></li>
+								<li><a >Cypher</a></li>
+							</ul>
+						</li>
+						<li id="x"><a name="x" class="title">x</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="y"><a name="y" class="title">y</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+						<li id="z"><a name="z" class="title">z</a>
+							<ul>
+								<li><a >damien</a></li>
+								<li><a >danny</a></li>
+								<li><a >denver</a></li>
+								<li><a >devon</a></li>
+								<li><a >doug</a></li>
+								<li><a >dustin</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div id="caltoolbar" class="ctoolbar">
+             <div id="showtodaybtn" class="fbutton">
+                <div><span title='Click to back to today ' class="showtoday">今天</span></div>
+            </div>
+              <div class="btnseparator"></div>
+            <div id="showdaybtn" class="fbutton">
+                <div><span title='Day' class="showdayview">日</span></div>
+            </div>
+            <div id="showdaylistbtn" class="fbutton">
+                <div><span title='Day' class="showdayview">日表</span></div>
+            </div>
+            <div  id="showweekbtn" class="fbutton fcurrent">
+                <div><span title='Week' class="showweekview">周</span></div>
+            </div>
+            <div  id="showweeklistbtn" class="fbutton">
+                <div><span title='Week' class="showweekview">周表</span></div>
+            </div>
+            <div  id="showmonthbtn" class="fbutton">
+                <div><span title='Month' class="showmonthview">月</span></div>
+            </div>
+            <div  id="showmonthlistbtn" class="fbutton">
+                <div><span title='Month' class="showmonthview">月表</span></div>
+            </div>
+            <div class="btnseparator"></div>
+              <div  id="showreflashbtn" class="fbutton">
+                <div><span title='Refresh view' class="showdayflash">刷新</span></div>
+                </div>
+             <div class="btnseparator"></div>
+            <div id="sfprevbtn" title="Prev"  class="fbutton">
+              <span class="fprev"></span>
+            </div>
+            <div id="sfnextbtn" title="Next" class="fbutton">
+                <span class="fnext"></span>
+            </div>
+            <div class="fshowdatep fbutton">
+                    <div>
+                        <input type="hidden" name="txtshow" id="hdtxtshow" />
+                        <span id="txtdatetimeshow">选择日期查看</span>
+                    </div>
+            </div>
+            <div class="clear"></div>
+             <div id="loadingpannel" class="ptogtitle loadicon" style="display: none;">Loading data...</div>
+             <div id="errorpannel" class="ptogtitle loaderror" style="display: none;">Sorry, could not load your data, please try again later</div>
+              <div class="clear"></div>
+            </div>
+        	<div id="gridcontainer" style="overflow-y: auto;"></div>
+		</div>
+	</div>
+</div>

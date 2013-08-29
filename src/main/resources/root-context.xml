@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/data/jpa 
+	http://www.springframework.org/schema/data/jpa/spring-jpa-1.2.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+	http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring   
+	http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- Root Context: shared resources visible to all other web components -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:connection.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- datasource -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass"><value>${driverClass}</value></property>
+		<property name="jdbcUrl"><value>${jdbcUrl}</value></property>
+		<property name="user"><value>${user}</value></property>
+		<property name="password"><value>${password}</value></property>
+		<property name="maxPoolSize"><value>${maxPoolSize}</value></property>
+		<property name="minPoolSize"><value>${minPoolSize}</value></property>
+		<property name="maxStatements"><value>${maxStatements}</value></property>
+		<property name="maxIdleTime"><value>${maxIdleTime}</value></property>
+		<property name="idleConnectionTestPeriod"><value>${idleConnectionTestPeriod}</value></property>
+		<property name="initialPoolSize"><value>${initialPoolSize}</value></property>
+		<property name="acquireIncrement"><value>${acquireIncrement}</value></property>
+	</bean>
+	
+	<!-- spring JPA -->
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="puma" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<!--property name="databasePlatform" value="org.hibernate.dialect.SQLServerDialect"/-->
+				<property name="database" value="MYSQL"/>  
+				<property name="showSql" value="true" /> 
+			</bean>  
+		</property>  
+	</bean>
+	
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<jpa:repositories base-package="com.puma.**.dao.**" entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManager"/> 
+ 
+	<!-- annotation config for all beans -->
+	<context:annotation-config/>
+	
+	<!-- <aop:aspectj-autoproxy/> -->
+    
+	<context:component-scan base-package="com.**" />
+    
+    <import resource="mailsender-servlet.xml"/>  
+    
+    <bean id="springUtil" class="com.puma.util.SpringUtils" lazy-init="false" />
+    
+    <ehcache:annotation-driven cache-manager="ehCacheManager" /> 
+    <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
+		<property name="configLocation" value="classpath:ehcache.xml" />  
+	</bean>
+	
+	 
+    <!-- <bean class="com.puma.util.TestGetAllController" init-method="start" destroy-method="stop" /> -->
+
+	<bean class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService" id="captchaService">
+		<property name="captchaEngine">
+			<bean class="com.puma.core.security.captcha.CaptchaEngine" />
+		</property>
+		<property name="minGuarantedStorageDelayInSeconds" value="600" />
+	</bean>
+	
+	<!-- freeMarker config file path  -->
+	<bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:freemarker.properties" />
+	</bean>
+
+	<!-- config freeMarker template path -->
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">    
+		<property name="freemarkerSettings" ref="freemarkerConfiguration" />
+		<property name="templateLoaderPath">
+			<value>/WEB-INF/views/ftl/</value>
+		</property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+			</map>
+		</property>
+	</bean>
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+</beans>

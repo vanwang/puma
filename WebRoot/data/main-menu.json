@@ -1,0 +1,14 @@
+[{
+	"id":"link-SystemHomeModule",
+	"iconCls":"icon-none",
+    "text":"首页",  
+    "attributes":{  
+		    "hash":"#module=SystemHomeModule|{}"
+		} 
+},{
+    "text":"更换皮肤",  
+    "iconCls":"icon-none",
+    "attributes":{  
+		    "hash":"#module=ChangeSkinModule|{}"
+		} 
+}]

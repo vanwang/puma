@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<title>
+			PUMA Framework&mdash;&mdash;让系统开发更简单一点
+		</title>
+		<meta content="" name="keywords">
+		<meta content="" name="description">
+		<link href="images/favicon.ico" rel="shortcut icon" type="images/x-icon">
+		<link href="include/register.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="resources/jquery.js"></script>
+		<!--[if lt IE 9]>
+			<script src="include/html5.js" type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
+			</script>
+		<![endif]-->
+	</head>
+	
+<body>
+		
+    <div class="mod-header grid-96">
+        <div class="logo">
+            <a href="#"><img alt="puma logo" src="include/img/puma-logo-nopadding.png"></a>
+        </div>
+    </div>
+    <div class="mod-bread clearfix">
+        <div class="grid-96 mod-navbar">
+            <ul class="bread-left clearfix">
+                <li class="reg_tab mail_reg_tab active" id="mailRegTab">邮箱注册</li>
+                <li class="reg_tab school_reg_tab" id="phoneRegTab">学号注册(暂停)</li>
+            </ul>
+            <div class="bread-right">
+                已有帐号？<a href="login.html">马上登录</a>
+            </div>
+        </div>
+    </div>
+	<div id="register-content-id" style="display: block;"
+		class="mod-regcontent grid-96 tang-pass-reg" id="normal_reg">
+		<form id="register-form-id" autocomplete="off" method="POST">
+			<p class="pass-generalErrorWrapper">
+				<span class="pass-generalError"></span>
+			</p>
+			<p id="pass_register_school_container_id" class="pass-form-item pass-form-item-email">
+				<label class="pass-label pass-label-email">学校</label>
+				<select class="pass-text-input pass-text-input-email" id="pass_register_school_select_id">
+					<option>一所综合性大学</option>
+				</select>
+				
+				<span class="pass-item-error">邮箱格式不正确</span>
+				<span class="pass-item-succ"></span>
+				<span class="pass-item-tip">
+					请输入常用邮箱111，通过验证后可用于登录和找回密码
+				</span>
+			</p>
+			<p class="pass-form-item pass-form-item-email">
+				<label id="pass-label-email-id" class="pass-label pass-label-email">邮箱</label>
+				<input id="email-input-id" name="email" class="pass-text-input pass-text-input-email" type="text"> 
+				<span class="pass-item-error">邮箱格式不正确</span>
+				<span class="pass-item-succ"></span>
+				<span class="pass-item-tip">
+					请输入常用邮箱，通过验证后可用于登录和找回密码
+				</span>
+			</p>
+			<p class="pass-form-item pass-form-item-password">
+				<label class="pass-label pass-label-password">密码</label>
+				<input id="password-input-id" name="password" class="pass-text-input pass-text-input-password" type="password">
+				<span class="pass-item-error">密码长度6~14位，字母区分大小写</span>
+				<span class="pass-item-succ"></span> 
+				<span class="pass-item-tip pass-item-tip-password">
+					<span>
+						<span>
+							<span class="pwd-strength clearfix">
+								<span class="strength-title">强度：</span>
+								<span class="strength-value"></span>
+								<span class="strength-bg">
+									<span class="strength-inner"></span>
+							</span>
+						</span>
+						<span class="strength-explain">密码长度6~14位，字母区分大小写</span>
+					</span>
+					</span>
+				</span>
+			</p>
+			<p class="pass-form-item pass-form-item-verifyCode">
+				<label class="pass-label pass-label-verifyCode">验证码</label>
+				<input id="vcode-input-id" class="pass-text-input pass-text-input-verifyCode" maxlength="4" type="text">
+				<span>
+					<img id="verify-image-id" hidefocus="true" title="验证码图片" alt="验证码图片" class="pass-verifyCode"
+					src="captcha.jpeg">
+				</span>
+				<a href="#" id="change-verify-image-anchor-id" class="pass-change-verifyCode">看不清？</a>
+				<span class="pass-item-error">请输入图中图片</span>
+				<span class="pass-item-succ"></span>
+				<span class="pass-item-tip">
+					请输入图中图片，不区分大小写
+				</span>
+			</p>
+			<p class="pass-form-item pass-form-item-isAgree">
+				<input id="agreelicense-input-id" name="isAgree" checked="checked" class="pass-checkbox-input pass-checkbox-isAgree" type="checkbox">
+					<label>我已阅读并接受</label>
+					<a target="_blank" href="#">《Puma framework协议》</a>
+			</p>
+			<p class="pass-form-item pass-form-item-submit">
+				<input value="注册" id="register-btn-id" class="pass-button pass-button-submit" type="submit">
+				<span class="pass-item-error pass-item-error-isAgree" id="agree-license-error-text-id">您还未接受Puma framework用户协议</span>
+			</p>
+			<div id="tool-tip-container-id" class="pass-pop-tip" style="left:420px;display:none;">
+				<div class="pass-pop-tip-header"></div>
+				<div class="pass-pop-tip-container">
+					<div class="pass-pop-tip-body">
+						<div id="tool-tip-text-id" class="pass-pop-tip-content"></div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+    <div class="mod-footer grid-96">©2013</div>
+
+	<script>
+
+		$(document).ready(function()
+		{
+			$(".pass-item-tip,.pass-item-succ,.pass-item-error").hide();
+			
+			var tooltipContainer = $("#tool-tip-container-id"),
+			tolltipText = $("#tool-tip-text-id"),
+			vcode_img = $('#change-verify-image-anchor-id,#verify-image-id'),
+			form=$("#register-form-id"),
+			email=$("#email-input-id"),
+			password=$("#password-input-id"),
+			vcode=$("#vcode-input-id"),
+			agreelicense=$("#agreelicense-input-id");
+			//registerBtn=$("#register-btn-id");
+			
+			$(":text,:password").focusin(function(){
+				var tipText = $.trim($(this).siblings(".pass-item-tip").html());
+				tooltipContainer.css("top",$(this).parent().position().top+15);
+				tolltipText.html(tipText);
+				tooltipContainer.show();
+			}).focusout(function(){
+				tooltipContainer.hide();
+			});
+			
+			setTimeout(function(){email.focus();}, 800);
+			
+			/** 刷新验证码 */
+			vcode_img.click( function() {
+				reloadVCode();
+			});
+			
+			form.submit(function(){
+				var isValidEmail = validateEmail(email);
+				var isValidPassword = validatePassword(password)!=0;
+				var isValidVcode = validateVCode(vcode);
+				var isAgreeLicense = validateLicense(agreelicense);
+				if(isValidEmail && isAgreeLicense && isValidVcode && isValidPassword > 0){
+					submitForm();
+				}
+				return false;
+			});
+			
+			/* registerBtn.click(function(){
+				var isValidEmail = validateEmail(email);
+				var isValidPassword = validatePassword(password)!=0;
+				var isValidVcode = validateVCode(vcode);
+				var isAgreeLicense = validateLicense(agreelicense);
+				if(isValidEmail && isAgreeLicense && isValidVcode && isValidPassword > 0){
+					submitForm();
+				}
+			}); */
+			
+			function submitForm(){
+				$.ajax({ 
+					url:'member/register.do',
+					type:'POST', 
+			  		data: {
+			  			email:	email.val(),
+			  			password:	password.val(),
+			  			j_captcha:	vcode.val()
+			  		},
+			  		success: function(data)
+			  		{
+			  			if(data.status === "success"){
+			  				$("#register-content-id").html("<div style='text-align:center;padding-top:50px;'>恭喜您，注册成功，请查收邮件并激活账号!</div>");
+							return;
+			  			}else{
+			  				if(data.message == "captcha error"){
+			  					vcode.siblings(".pass-item-error").text("验证码输入有误!").show();
+			  					setTimeout(reloadVCode,700);
+			  				}else{
+			  					alert(data.message);
+			  				}
+			  			}
+			  		},
+			  		error: function()
+			  		{
+			  			alert('Error while contacting server, please try again!');
+			  		}
+			  });
+			}
+			
+			email.bind("change",function(){
+				validateEmail($(this));
+			});
+			
+			password.bind("keyup",function(){
+				validatePassword($(this));
+			});
+			
+			vcode.bind("change",function(){
+				validateVCode($(this));
+			});
+			
+			function reloadVCode(){
+
+				var timestamp = (new Date()).valueOf();
+				var imageSrc = vcode_img.attr("src");
+				if(imageSrc.indexOf("?") >= 0) {
+					imageSrc = imageSrc.substring(0, imageSrc.indexOf("?"));
+				}
+				imageSrc = imageSrc + "?timestamp=" + timestamp;
+				vcode_img.attr("src", imageSrc);
+			
+			}
+			
+			function validatePassword(passwordInput){
+				S_level = checkStrong(password.val());
+				$("span.strength-inner").removeClass("invalid weak middle strong");
+				passwordInput.removeClass("pass-text-input-error");
+				passwordInput.siblings(".pass-item-error").hide();
+				passwordInput.siblings(".pass-item-succ").show();
+				
+				switch (S_level) {
+				case 0:
+					$("span.strength-inner").addClass("invalid");
+					$("span.strength-value").text("太短");
+					passwordInput.addClass("pass-text-input-error");
+					passwordInput.siblings(".pass-item-error").show();
+					passwordInput.siblings(".pass-item-succ").hide();
+					break;
+				case 1:
+					$("span.strength-inner").addClass("weak");
+					$("span.strength-value").text("低");
+					break;
+				case 2:
+					$("span.strength-inner").addClass("middle");
+					$("span.strength-value").text("中");
+					break;
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+					$("span.strength-inner").addClass("strong");
+					$("span.strength-value").text("强");
+					break;
+				default:
+					$("span.strength-inner").addClass("invalid");
+				}
+				return S_level;
+			}
+			
+			function validateVCode(vcodeInput){
+				var isValid = false;
+				isValid = $.trim(vcodeInput.val()).length==4;
+				if(isValid){
+					vcodeInput.removeClass("pass-text-input-error");
+					vcodeInput.siblings(".pass-item-error").hide();
+				}else{
+					vcodeInput.siblings(".pass-item-error").show();
+					vcodeInput.addClass("pass-text-input-error");
+				}
+				return isValid;
+			}
+			
+			function validateEmail(emailInput){
+				var isValid = false;
+				isValid = email.val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/);
+				if(isValid){
+					emailInput.removeClass("pass-text-input-error");
+					emailInput.siblings(".pass-item-error").hide();
+					emailInput.siblings(".pass-item-succ").show();
+				}else{
+					emailInput.siblings(".pass-item-error").show();
+					emailInput.siblings(".pass-item-succ").hide();
+					emailInput.addClass("pass-text-input-error");
+				}
+				return isValid;
+			}
+			
+			function validateLicense(agreeInput){
+				var isValid = false;
+				isValid = agreeInput.attr("checked");
+				if(isValid){
+					$("#agree-license-error-text-id").hide();
+				}else{
+					$("#agree-license-error-text-id").show();
+				}
+				return isValid;
+			}
+			
+			$("#pass_register_school_container_id").hide();
+			$("ul.bread-left li").click(function(){
+				$(this).parent().find(".active").removeClass("active");
+				$(this).addClass("active");
+				var index = $(this).index();
+				switch(index){
+					case 0:
+						$("#pass_register_school_container_id").hide();
+						$("#pass-label-email-id").text("邮箱");
+						break;
+					case 1:
+						$("#pass_register_school_container_id").show();
+						$("#pass-label-email-id").text("学号");
+						break;
+				}
+			});
+		});
+
+        
+		//CharMode函数
+		//测试某个字符是属于哪一类.
+		function CharMode(iN) {
+			if (iN >= 48 && iN <= 57) //数字
+				return 1;
+			if (iN >= 65 && iN <= 90) //大写字母
+				return 2;
+			if (iN >= 97 && iN <= 122) //小写
+				return 4;
+			else
+				return 8; //特殊字符
+		}
+
+		//bitTotal函数
+		//计算出当前密码当中一共有多少种模式
+		function bitTotal(num) {
+			modes = 0;
+			for (var i = 0; i < 4; i++) {
+				if (num & 1)
+					modes++;
+				num >>>= 1;
+			}
+			return modes;
+		}
+
+		//checkStrong函数
+		//返回密码的强度级别
+		function checkStrong(sPW) {
+			if (sPW.length <= 5)
+				return 0; //密码太短
+			Modes = 0;
+			for (var i = 0; i < sPW.length; i++) {
+				//测试每一个字符的类别并统计一共有多少种模式.
+				Modes |= CharMode(sPW.charCodeAt(i));
+			}
+
+			return bitTotal(Modes);
+
+		}
+
+		//pwStrength函数
+		//当用户放开键盘或密码输入框失去焦点时,根据不同的级别显示不同的颜色
+		function pwStrength(pwd) {
+			S_level = checkStrong(pwd);
+			switch (S_level) {
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			default:
+				;
+			}
+			return;
+		}
+	</script>	
+	
+	
+</body>
+</html>

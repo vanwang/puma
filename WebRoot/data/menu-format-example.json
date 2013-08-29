@@ -1,0 +1,25 @@
+[{
+    "text":"首页",  
+    "children":[{  
+        "text":"File1"
+    },{  
+        "text":"Books",  
+        "attributes":{  
+            "url":"/demo/book/abc",  
+            "price":100  
+        },  
+        "children":[{  
+            "text":"PhotoShop"
+        },{  
+            "text":"Sub Bookds",  
+            "state":"open"  
+        }]  
+    }]  
+},{  
+    "text":"Languages",  
+    "children":[{  
+        "text":"Java"  
+    },{  
+        "text":"C#"  
+    }]  
+}]

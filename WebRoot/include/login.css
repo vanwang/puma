@@ -1,0 +1,736 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,button,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed
+}
+
+fieldset,img {
+	border: 0
+}
+
+address,caption,cite,code,dfn,em,th,var {
+	font-style: normal;
+	font-weight: normal
+}
+
+ol,ul {
+	list-style: none
+}
+
+caption,th {
+	text-align: left
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal
+}
+
+input,button,textarea,select,optgroup,option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit
+}
+
+input:focus {
+	outline: 0
+}
+
+input,button,textarea,select {
+	*font-size: 100%
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section
+	{
+	display: block
+}
+
+html,body {
+	height: 100%
+}
+
+body {
+	margin: 0;
+	color: #333;
+	font: 12px/1.5 Tahoma, Arial, Helvetica, sans-serif;
+	/* background: url("img/bg_clouds.gif") repeat scroll 0 -376px transparent; */
+}
+
+a {
+	color: #06c;
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+.page {
+	width: 100%
+}
+
+.page960 {
+	width: 960px;
+	margin: 0 auto
+}
+
+.separator {
+	color: #CCC;
+	padding: 0 4px
+}
+
+.header {
+	position: relative;
+	height: 60px;
+	z-index: 100;
+	border-bottom: #b3b3b3 1px solid;
+	box-shadow: 0 0 5px #c3c3c3;
+	background: #fff
+		url('img/puma-logo.png') 0 -140px repeat-x;
+	min-width: 960px;
+	_width: expression(( document.documentElement.clientWidth ||
+		document.body.clientWidth)<960?"960px":"" )
+}
+
+.header-inner {
+	padding-top: 10px;
+	margin: 0 25px;
+	_padding-top: 0;
+	_margin-top: 10px
+}
+
+.logo {
+	 background: url("img/puma-logo.png") no-repeat scroll -40px -20px transparent;
+    float: left;
+    height: 48px;
+    outline: 0 none;
+    text-indent: -9999em;
+    width: 440px;
+}
+
+.header-nav {
+	float: right
+}
+
+.header-nav li {
+	float: left;
+	margin-top: 10px;
+	padding: 0 5px;
+	color: #dbdbdb;
+	line-height: 14px
+}
+
+.header-nav a {
+	color: #06C
+}
+
+
+.arrow {
+	border-left: 4px solid #fafafa;
+	border-right: 4px solid #fafafa;
+	border-top: 4px solid #BBB;
+	display: inline-block;
+	height: 4px;
+	line-height: 0;
+	margin-top: 2px;
+	vertical-align: middle;
+	width: 1px;
+	margin-left: 2px;
+	color: #BBB
+}
+
+.u-sina,.u-renren,.u-qq {
+	background:
+		url('http://s1.yun.bdstatic.com/chres/static/images/third-icon.gif?t=201303070702');
+	display: block;
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-right: 3px
+}
+
+.u-sina {
+	background-position: -72px 1px
+}
+
+.u-renren {
+	background-position: -72px -22px
+}
+
+.u-qq {
+	background-position: -72px -44px
+}
+
+.header-nav .person-info-li {
+	position: relative;
+	padding-bottom: 5px
+}
+
+
+.b-no-ln {
+	float: left;
+	margin-right: 8px;
+	clear: both;
+	line-height: 32px;
+	color: red !important
+}
+
+.b-no-ln-download {
+	clear: both;
+	_clear: none;
+	line-height: 36px;
+	height: 36px;
+	color: #2974b6
+}
+
+.header-nav ul {
+	float: left
+}
+
+.header-nav {
+	_position: absolute;
+	_top: 0;
+	_right: 0;
+	height: 36px;
+	line-height: 36px;
+	display: block;
+	color: #06c
+}
+
+.header-inner {
+	zoom: 1;
+	_position: relative
+}
+
+#top_menu_other {
+	display: block;
+	height: 36px;
+	line-height: 36px;
+	background: 0 -6px no-repeat;
+	padding-left: 56px
+}
+
+.clear {
+	height: 0;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	clear: both;
+	overflow: hidden
+}
+
+.footer {
+	padding: 33px 0 27px 0;
+	text-align: center;
+	clear: both;
+	color: #666;
+	width: 960px;
+	margin: 0 auto
+}
+
+.footer a,.footer a:link,.footer a:visited,.footer a:hover,.footer a:active
+	{
+	color: #666
+}
+
+body {
+	/* background:url("img/bg_clouds.png")repeat scroll 0 bottom #3E83C8;
+	position: relative */
+}
+
+.slide-wrap {
+	background: #f7f7f7
+}
+
+.slide {
+	position: relative;
+	width: 960px;
+	height: 520px;
+	margin: 0 auto;
+	overflow: hidden;
+	zoom: 1
+}
+
+.img-content {
+	margin-top: 81px;
+	margin-left: -20px;
+	height: 306px;
+	overflow: hidden;
+	width:600px;
+	z-index:-1;
+}
+
+.img-content a {
+	cursor: default
+}
+
+.img-content img {
+	/* display: none */
+}
+
+.img-content img.current {
+	display: block
+}
+
+.focus-content {
+	bottom: 10px;
+	position: absolute;
+	left: 420px
+}
+
+.focus-content .focus-content-item {
+	float: left;
+	padding: 0 2px
+}
+
+.focus-content .focus-content-item .focus-anchor {
+	background:
+		url("img/login_page.gif")
+		no-repeat scroll -356px -303px transparent;
+	display: block;
+	height: 11px;
+	outline: medium none;
+	overflow: hidden;
+	width: 11px
+}
+
+.focus-content .focus-content-item .focus-anchor:hover,.focus-content .focus-content-item .current
+	{
+	background:
+		url("img/login_page.gif")
+		no-repeat scroll -333px -303px transparent
+}
+
+.index-slide-img {
+	border: 0 none
+}
+
+.service {
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 50px;
+	overflow: hidden
+}
+
+.service-item {
+	float: left;
+	display: inline;
+	margin: 0 10px;
+	width: 300px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #999
+}
+
+.service-item .pic {
+	float: left
+}
+
+.service-item .pic span {
+	background:
+		url("img/login_page.gif")
+		no-repeat;
+	display: block;
+	width: 100px;
+	height: 100px
+}
+
+.service-item .text {
+	float: left;
+	display: inline;
+	margin-left: 10px;
+	width: 180px
+}
+
+.service-item .text h4 {
+	padding: 6px 0;
+	font-family: Microsoft Yahei;
+	font-size: 24px;
+	color: #000
+}
+
+.service-item .text a {
+	color: #000
+}
+
+.service-item .text p {
+	line-height: 20px;
+	font-size: 14px;
+	color: #999
+}
+
+.feature-browser .pic span {
+	background-position: -356px -115px
+}
+
+.feature-spring .pic span {
+	background-position: -520px -220px
+}
+
+.feature-jquery .pic span {
+	background-position: -520px -115px
+}
+
+.feature-maven .pic span {
+	background-position: -356px -215px
+}
+
+.feature-cache .pic span {
+	background-position: -700px -105px
+}
+
+.feature-plugin .pic span {
+	background-position: -700px -213px
+}
+
+.feature-jquery,.feature-plugin {
+	margin-right: 0
+}
+
+.login {
+	position: absolute;
+	left: 640px;
+	top: 65px;
+	z-index:55;
+}
+
+.login-div {
+	padding-top: 40px
+}
+
+#login-t {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 17px;
+	padding-left: 30px
+}
+
+.pass_login_label_username,.pass_login_label_school,.pass_login_label_phoneNumber,.pass_login_label_password,.pass_login_label_verifycode
+	{
+	float: left;
+	padding: 8px 16px 0 0
+}
+
+.pass_login_label_username,.pass_login_label_school,.pass_login_label_phoneNumber,.pass_login_label_password,.pass_login_label_verifycode,.pass_login_label_rem
+	{
+	color: #858585
+}
+
+#login-create {
+	color: #5b7e9b
+}
+
+.pass_login_form {
+	padding: 15px 0 0 28px
+}
+
+.pass_login_p_username,.pass_login_p_password,.pass_login_p_btn,.pass_login_p_phoneNumber
+	{
+	height: 30px;
+	padding: 10px 0 0
+}
+
+input:focus {
+	outline: 0
+}
+
+.pass_login_p_rem {
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	padding: 10px 52px 10px
+}
+
+.pass_login_input_username,.pass_login_input_password,.pass_login_input_phoneNumber,.pass_login_input_school
+	{
+	width: 184px;
+	height: 20px;
+	line-height: 20px;
+	border: 1px solid #96bfe6;
+	outline: 0;
+	margin: 0;
+	padding: 5px 8px;
+	font-size: 14px;
+	_display: inline;
+	float: left
+}
+.pass_login_input_school{
+	width:200px;
+	height:32px;
+	line-height:32px;
+}
+.pass_login_input_school option{
+	font-size:14px;
+}
+.pass_login_err,.pass_login_p_des,#pass_login_p_generalerror_0 {
+	display: none
+}
+
+.pass-error0 {
+	color: red;
+	position: relative;
+	top: 44px;
+	text-align: center
+}
+
+#PassPassword0 {
+	background-position: -179px -37px
+}
+
+.pass_login_input_rem { 0
+	margin: 5px 10px 0 49px; 1
+	_margin: 0 10px 0 49px; 9
+	height: 16px; 9
+	margin: 6px 10px 6px 49px;
+	overflow: hidden;
+	padding: 0; 0
+	width: 16px;
+	vertical-align: middle;
+	line-height: 18px;
+	font-size: 12px;
+	margin-right: 5px
+}
+
+.check-txt {
+	line-height: 18px;
+	font-size: 12px;
+	font-family: simsun;
+	vertical-align: middle
+}
+
+.pass_login_p_btn {
+	padding: 0 0 0 52px;
+	height: 38px
+}
+
+.pass_login_p_verifycode,.pass_login_p_img_verifycode {
+	overflow: hidden;
+	padding: 10px 0 0;
+	float: left
+}
+
+.pass_login_verifycode,.pass_login_input_verifycode,.pass_login_change_verifycode
+	{
+	margin-right: 5px
+}
+
+.pass_login_change_verifycode {
+	color: #06c;
+	cursor: pointer
+}
+
+.pass_login_p_rem {
+	clear: both;
+	zoom: 1
+}
+
+.pass-verifylabel {
+	color: #727780;
+	padding-right: 5px
+}
+
+.pass_login_input_verifycode {
+	width: 64px;
+	height: 28px;
+	line-height: 28px;
+	float: left;
+	_display: inline;
+	padding: 0 8px;
+	font-size:14px;
+	border:1px solid #96BFE6;
+}
+
+.pass_login_verifycode {
+	height: 29px;
+	float: left;
+	_display: inline
+}
+
+.pass_login_input_submit {
+	float: left;
+	_display: inline;
+	width: 140px;
+	height: 36px;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	margin-right: 20px;
+	background:
+		url("img/login_page.gif")
+		-659px 0 no-repeat;
+	text-indent: -999px
+}
+
+.pass_login_a_fgtpwd {
+	text-decoration: underline;
+	outline: 0;
+	padding: 0 0 0 10px;
+	line-height: 18px;
+	width: 64px;
+	color: #383838;
+	vertical-align: middle;
+	float: left;
+	position: relative;
+	top: -29px;
+	*top: -27px;
+	left: -80px
+}
+
+.button-container a:hover {
+	text-decoration: underline
+}
+
+.login-info {
+	position: absolute;
+	top: 328px;
+	left: 28px;
+	width: 266px
+}
+
+.login-info p {
+	line-height: 22px
+}
+
+#login-create {
+	padding-bottom: 15px;
+	display: block
+}
+
+.header-tab {
+	width: 316px;
+	height: 40px;
+	background:
+		url("img/login_page.gif")
+		-332px 0 no-repeat;
+	position: relative;
+	z-index: 1020;
+	top: 0;
+	left: 0
+}
+
+ul.header-tab li {
+	float: left;
+	width: 158px;
+	line-height: 40px;
+	color: #2486c4;
+	text-align: center;
+	cursor: pointer;
+	font-size: 14px
+}
+
+ul.header-tab .current {
+	font-weight: bold
+}
+
+.header-login {
+	width: 318px;
+	height: 433px;
+	margin: -35px 0 -25px 0;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	background:
+		url("img/login_page.gif")
+		0 0 no-repeat;
+	_display: inline;
+	z-index: 999;
+	left: -1px
+}
+
+.header-login .login-info .link-create {
+	width: 175px;
+	height: 38px;
+	display: block;
+	background: transparent
+		url("img/login_page.gif")
+		-659px -41px no-repeat;
+	margin-left: 50px
+}
+
+.login-outer-phone {
+	display: none
+}
+
+.login-tab {
+    clear: both;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+}
+.login-tab .tab-item {
+    cursor: pointer;
+    float: left;
+    height: 35px;
+    list-style: none outside none;
+    position: relative;
+    width: 159px;
+}
+.login-tab .tab-item-left {
+    width: 159px;
+}
+.tab-item-left a {
+    background: url("http://s1.yun.bdstatic.com/chres/static/images/yun_login_page.gif?t=201303290430") no-repeat scroll -331px -40px transparent;
+}
+.tab-item-left .on {
+    background: url("http://s1.yun.bdstatic.com/chres/static/images/yun_login_page.gif?t=201303290430") no-repeat scroll -331px 0 transparent;
+}
+.tab-item-right a {
+    background: url("http://s1.yun.bdstatic.com/chres/static/images/yun_login_page.gif?t=201303290430") no-repeat scroll -490px 0 transparent;
+}
+.tab-item-right .on {
+    background: url("http://s1.yun.bdstatic.com/chres/static/images/yun_login_page.gif?t=201303290430") no-repeat scroll -490px -40px transparent;
+}
+.login-tab .tab-item a {
+    color: #303030;
+    display: block;
+    font-family: 'ËÎÌו';
+    font-size: 14px;
+    height: 39px;
+    line-height: 39px;
+    outline: 0 none;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+.login-tab .tab-selected a {
+    font-weight: bold;
+}
+
+#main-content {
+    background: url("img/bg_clouds.gif") repeat scroll 0 bottom #3E83C8;
+    min-width:960px;
+}
+
+
+
+#img-content img.active {
+    z-index:10;
+    opacity:1.0;
+}
+
+#img-content img.last-active {
+    z-index:9;
+}
+
+#img-content img {
+	position:absolute;
+    z-index:8;
+    opacity:0.0;
+    filter:  alpha(opacity=0);
+	/* Set rules to fill background */
+			
+	/* Set up proportionate scaling */
+	width: 650px;
+	height: auto;
+			
+	/* Set up positioning */
+}

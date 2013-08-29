@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>皮肤管理</h1>
+</hgroup>
+
+<div class="with-padding">
+	<div class="boxed left-border large-margin-bottom" id="intro">
+		<h3 class="thin small-margin-bottom"><a name="000" target="_self">目录</a></h3>
+		<ul class="bullet-list">
+			<li><a href="#001" target="_self">实现方式</a></li>
+			<li><a href="#002" target="_self">更换系统皮肤</a></li>
+		</ul>
+	</div>
+			
+	<h3 class="thin"><a href="#000" name="001">实现方式</a></h3>
+	<p>
+		Puma framework的皮肤管理模块如下图所示，该模块提供对系统的换肤功能，系统默认提供5种类型的皮肤。。
+		<br>前端采用HTML+CSS+JQuery+JEasyui实现。
+		<br>后台登录采用Spring framework + Spring Data + Hibernate实现。
+		<br>默认提供5种类型的皮肤:<span style="font-weight:bold;">default, bootstrap, black, gray, metro</span>类型。
+		<div class="wrapped margin-bottom left-icon icon-info-round">
+			<span style="font-weight:bold;">注</span>：系统换肤是动态加载相对应的系统CSS文件。
+			<br>目前只是实现了少量的皮肤风格，并且没有做很炫的图片，但是前端已经预留了皮肤定制的机制，只需要设计好图片，替换背景即可。
+		</div>
+	</p>
+	<img alt="皮肤管理界面" src="img/puma/skin-management.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="002">更换系统皮肤</a></h3>
+	1. 点击皮肤图标下面的"换肤"按钮即可。更换皮肤后，用户的偏好设置会存入数据库。
+	
+</div>

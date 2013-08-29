@@ -1,0 +1,30 @@
+[{
+	"id":"link-AditionModule",
+    "text":"个人设置",  
+    "type":"folder",
+    "iconCls":"icon-none module-icon",
+    "attributes":{  
+		    "hash":"#module=AditionModule|{}"
+		} 
+},{
+	"id":"link-AditionModule1",
+    "text":"个人设置1",  
+    "iconCls":"icon-none module-icon",
+    "attributes":{  
+		    "hash":"#module=AditionModule|{}"
+		} 
+},{
+	"id":"link-AditionModule2",
+    "text":"个人设置2",  
+    "iconCls":"icon-none",
+    "attributes":{  
+		    "hash":"#module=AditionModule|{}"
+		} 
+},{
+	"id":"link-AditionModule3",
+    "text":"个人设置3",  
+    "iconCls":"icon-save",
+    "attributes":{  
+		    "hash":"#module=AditionModule|{}"
+		} 
+}]

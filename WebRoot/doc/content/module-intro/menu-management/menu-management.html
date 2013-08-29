@@ -1,0 +1,110 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>菜单管理</h1>
+</hgroup>
+
+<div class="with-padding">
+	<div class="boxed left-border large-margin-bottom" id="intro">
+		<h3 class="thin small-margin-bottom"><a name="000" target="_self">目录</a></h3>
+		<ul class="bullet-list">
+			<li><a href="#001" target="_self">实现方式</a></li>
+			<li><a href="#002" target="_self">新增标签页</a></li>
+			<li><a href="#003" target="_self">编辑标签页</a></li>
+			<li><a href="#004" target="_self">删除标签</a></li>
+			<li><a href="#005" target="_self">标签排序</a></li>
+			<li><a href="#006" target="_self">标签锁定</a></li>
+			<li><a href="#007" target="_self">删除菜单组或者菜单项</a></li>
+			<li><a href="#008" target="_self">编辑菜单组或者菜单项名称</a></li>
+			<li><a href="#009" target="_self">对菜单进行排序</a></li>
+			<li><a href="#010" target="_self">添加系统模块菜单</a></li>
+			<li><a href="#011" target="_self">添加自定义菜单项</a></li>
+		</ul>
+	</div>
+			
+	<h3 class="thin"><a href="#000" name="001">实现方式</a></h3>
+	<p>
+		Puma framework的菜单管理模块如下图所示，该模块提供对菜单以及菜单组的的新增、修改、删除、数据刷新以及菜单与系统模块插件的关联功能。
+		<br>前端采用HTML+CSS+JQuery+JEasyui实现。
+		<br>后台登录采用Spring framework + Spring Data + Hibernate实现。
+		<br>菜单管理界面分为5个板块:标签页管理模块、菜单工具栏、菜单项区域、系统模块区域以及系统模块工具栏。
+		<div class="wrapped margin-bottom left-icon icon-info-round">
+			<span style="font-weight:bold;">注</span>：菜单管理模块是系统中比较复杂的模块，可以作为Puma framework的插件开发参考。
+		</div>
+	</p>
+	<img alt="菜单管理界面" src="img/puma/menu-management.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="002">新增标签页</a></h3>
+	菜单管理中的标签与整个系统的系统菜单标签相对应。
+	<br><br>1. 点击菜单管理界面中菜单工具栏中的管理标签下拉菜单，选择"新增标签"菜单，弹出新增标签的表单窗口。
+	<br><br>2. 新增标签的表单窗口有1个必填项，标签名称。
+	<br><br>3. 用户输入完整信息后，点击"保存"按钮，如果所有表单元素正确，提示保存进度信息，保存成功后，提示保存成功，标签页添加到菜单项区域，并且处于选中状态。
+	<br><br>4. 新增的标签页中，有一个默认的分组，为系统默认添加。
+	<br><br><img alt="新增标签界面" src="img/puma/menu-management-add-tab.jpg" width="800px">
+	<br><br><img alt="新增标签界面-2" src="img/puma/menu-management-add-tab-2.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="003">编辑标签页</a></h3>
+	1. 点击菜单管理界面中菜单工具栏中的管理标签下拉菜单，选择"编辑标签"菜单，弹出新增标签的表单窗口。
+	<br><br>2. 所编辑的标签为当前标签页管理区域中的所选标签。
+	<br><br>3. 输入标签的新名称，保存，页面的标签名称改变，页面不刷新。
+	<br><br>4. 点击"取消"按钮，确认窗口消失。
+	<br><br><span style="font-weight:bold;">注</span>：首页标签是不允许编辑的，尝试编辑首页标签会提示不能编辑。
+	<br><br><img alt="编辑标签页界面" src="img/puma/menu-management-edit-tab.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="004">删除标签</a></h3>
+	1. 点击菜单管理界面中菜单工具栏中的管理标签下拉菜单，选择"删除标签"菜单，弹出删除标签的确认窗口。
+	<br><br>2. 点击"确认"按钮，提示删除进度信息，删除成功后，提示删除标签成功，页面不跳转，并且标签已经删除。
+	<br><br>3. 点击"取消"按钮，确认窗口消失。
+	<br><br><span style="font-weight:bold;">注</span>：首页标签是不允许删除的，尝试编辑首页标签会提示不能删除。
+	<br><br>如果所删除的标签里含有系统关联的模块菜单，会提示所关联模块的数量。
+	<br><br><img alt="删除标签界面" src="img/puma/menu-management-delete-tab.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="005">标签排序</a></h3>
+	1. 可以方便的对菜单标签进行排序，管理员可以按照自己的喜好排列各个标签的顺序。直接鼠标左键点击要排序的标签，拖拽到指定位置，释放鼠标左键，标签顺序自动保存。
+	<br><br><img alt="角色排序界面" src="img/puma/menu-management-tab-order.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="006">标签锁定</a></h3>
+	1.管理员可以将标签锁定到系统的初始化界面中。一旦标签锁定后，在加载系统时，标签会自动加载到系统中，并且标签页不能关闭。点击该标签，会默认选择第一个系统模块插件。
+	<br><br><span style="font-weight:bold;">注</span>：如果该标签下不包含任何系统模块插件，将不能锁定该标签。
+	<br><br><img alt="标签锁定界面" src="img/puma/menu-tab-config.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="006">新增菜单组</a></h3>
+	管理员可以在菜单项区域添加菜单组，用于更好的管理菜单项。
+	<br><br>1. 点击菜单管理界面中菜单工具栏中的管理菜单下拉菜单，选择"菜单组"菜单，弹出新增菜单组的表单窗口。
+	<br><br>2. 输入菜单组的新名称，保存，提示正在保存菜单组，保存成功后，提示新菜单添加成功，并且菜单组出现在菜单项区域，页面不刷新。
+	<br><br>3. 点击"取消"按钮，确认窗口消失。
+	<br><br><img alt="新增菜单组界面" src="img/puma/menu-management-menu-group-add.jpg" width="800px">
+	<br><br><img alt="新增菜单组界面" src="img/puma/menu-management-menu-group-add-2.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="007">删除菜单组或者菜单项</a></h3>
+	管理员可以使用拖拽功能来删除菜单组或者菜单项。
+	<br><br>1. 选中要删除菜单组或者菜单项，右方的系统模块插件区域会闪烁提示。
+	<br><br>2. 拖拽所选菜单组或者菜单项到右边区域，垃圾框显示满的状态，释放鼠标左键，所选菜单组或菜单项目成功删除，并且系统有相应提示。
+	<br><br>3. 如果删除失败，提示删除菜单组或者菜单项失败，系统菜单栏目恢复到删除之前状态。
+	<br><br><img alt="删除菜单组或者菜单项界面" src="img/puma/menu-management-menu-item-delete.jpg" width="800px">
+	<br><br><img alt="删除菜单组或者菜单项界面2" src="img/puma/menu-management-menu-item-delete2.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="008">编辑菜单组或者菜单项名称</a></h3>
+	1. 选中要编辑菜单组或者菜单项名称，名称区域变成可编辑状态，修改名称后，回车即可，或者将焦点移动到别处也可以保存。
+	<br><br>2. 如果名称没有修改，不会进行保存。
+	<br><br><span style="font-weight:bold;">注</span>：要取消保存，可以按"ESC"键。
+	<br><br><img alt="编辑菜单组或者菜单项名称界面" src="img/puma/menu-management-menu-item-edit.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="009">对菜单进行排序</a></h3>
+	1. 选中要排序的菜单组或者菜单项名称，拖拽到目标位置即可。
+	<br><br><span style="font-weight:bold;">注</span>：菜单组不能拖动到菜单项中，菜单项可以拖动到与菜单组同级别。
+	<br><br><img alt="对菜单进行排序" src="img/puma/menu-management-menu-item-order.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="010">添加系统模块菜单</a></h3>
+	1. 在右方的系统模块插件区域选中要添加的插件，拖拽到目标菜单树中的目标位置即可。
+	<br><br><img alt="对菜单进行排序" src="img/puma/menu-management-menu-item-add-system.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="011">添加自定义菜单项</a></h3>
+	1. 点击菜单管理界面中菜单工具栏中的管理菜单下拉菜单，选择"自定义菜单"菜单，弹出自定义菜单的表单窗口。
+	<br><br>2. 自定义菜单分为两类，一类是自定义URL菜单，另外一类是关联到系统模块的快捷菜单。
+	<br><br>3. 在自定义URL菜单标签中，有两个必填项，一个是菜单名称，一个是URL地址。如果输入的URL不合法，会有错误提示。
+	<br><br>4. 在自定义URL菜单标签中，可以以新窗口的方式打开，也可以用iframe的形式打开。
+	<br><br>5. 在系统模块的快捷菜单标签中，有两个必填项，一个是菜单名称，一个是系统模块下拉框。如果不选择系统模块，会有错误提示。
+	<br><br><img alt="添加自定义菜单项" src="img/puma/menu-management-menu-item-add-custom.jpg" width="800px">
+	<br><br><img alt="添加自定义菜单项" src="img/puma/menu-management-menu-item-add-custom-module.jpg" width="800px">
+	
+</div>

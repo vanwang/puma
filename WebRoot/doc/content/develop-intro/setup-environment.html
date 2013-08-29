@@ -1,0 +1,93 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>开发环境搭建</h1>
+</hgroup>
+
+<div class="with-padding">
+	<div class="wrapped margin-bottom big-left-icon icon-gear">
+		<h4 class="no-margin-bottom">工具准备</h4>
+		<br>
+		<p>
+		"工欲善其事，必先利其器！"，在搭建开发环境之前，我们需要准备一些必要的开发工具和组件:
+		</p>
+		<ul class="bullet-list">
+			<li>1. <b>MyEclipse或者Eclipse</b> ,我个人比较喜欢MyEclipse，毕竟商业化的东西，更稳定一些。附：<a onclick="javascript:window.open('tools/pc6-MyEclipse10cr.zip')" href="javascript:void(0);">MyEclipse10破解工具下载</a>
+			</li>
+			<li>2. <b>Eclipse Maven插件</b>。如果您安装的是MyEclipse，那么此项忽略。插件地址:<a href="http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-3.0.4-bin.tar.gz" target="_blank">http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-3.0.4-bin.tar.gz</a>
+			</li>
+			<li>3. <b>Eclipse SVN插件</b>。插件地址：<a href="http://www.eclipse.org/subversive/latest-releases.php" target="_blank">http://www.eclipse.org/subversive/latest-releases.php</a>
+			</li>
+			<li>4. <b>MySQL</b>数据库。下载地址：<a href="http://www.mysql.com/downloads/" target="_blank">http://www.mysql.com/downloads/</a>，我用的是5.0.96版本。
+			</li>
+			<li>5. <b>Tomcat</b>。下载地址：<a href="http://tomcat.apache.org/" target="_blank">http://tomcat.apache.org/</a>，我用的是apache-tomcat-6.0.28。
+			</li>
+		</ul>
+	</div>
+			
+	<h3 class="thin"><a href="#000" name="001">搭建Puma开发环境</a></h3>
+	<p>
+		1. 在工程栏目空白处点击鼠标右键,选择import,或者选择MyEclipse菜单的File->Import
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-01.jpg" width="380px">
+	<p>
+		2. 找到SVN，选择Project from SVN
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-02.jpg" width="400px">
+	<p>
+		3. 选择Create a new repository location
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-03.jpg" width="400px">
+	<p>
+		4. 输入提供的SVN地址：https://v2.svnspot.com/boyuan2000cn.pumaframework/puma/
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-04.jpg" width="400px">
+	<p>
+		5. 输入SVN用户名和密码
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-05.jpg" width="400px">
+	<p>
+		6. 下一步
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-06.jpg" width="400px">
+	<p>
+		7. 选择用新向导创建工程
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-07.jpg" width="400px">
+	<p>
+		8. 选择Maven工程类型
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-08.jpg" width="400px">
+	<p>
+		9. 选择webapp类型
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-09.jpg" width="400px">
+	<p>
+		10. 输入group id， artiface id 以及package信息
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-10.jpg" width="400px">
+	<p>
+		11. 在导入的工程上右键，选择Mave4Eclipse->Update Porject Configuration
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-11.jpg" width="400px">
+	<p>
+		12. 在导入的工程上右键，选择属性，在弹出的窗口中找到Deployment Assembly.删除/target/WebRoot栏目
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-12.jpg" width="400px">
+	
+	<p>
+		13. Puma framework开发环境搭建完毕！
+	</p>
+	
+	<h3 class="thin"><a href="#000" name="001">导入Html Minify Maven插件</a></h3>
+	<div class="wrapped margin-bottom left-icon icon-info-round">
+		<span style="font-weight:bold;">注</span>：由于在发布Puma framework的时候，需要进行HTML，JS，CSS文件的压缩优化，需要这个插件，但是我没有将该插件放在公用的Maven库中，所以需要导入该工程
+	</div>
+	<p>
+		1. 在工程栏目空白处点击鼠标右键,选择import,或者选择MyEclipse菜单的File->Import
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-01.jpg" width="380px">
+	<p>
+		2. 工程的导入和上面步骤类似，所不同的是选择mojo类型。
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/setup-environment/setup-environment-13.jpg" width="380px">
+</div>

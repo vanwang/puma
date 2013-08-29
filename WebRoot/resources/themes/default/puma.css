@@ -1,0 +1,62 @@
+.frame-main {
+    border-top:solid 4px #135ba5;
+}
+.top-text{
+	color:white;
+}
+.skin-top {
+    background-color: #FFFFFF;
+}
+.skin-left {
+    box-shadow: -1px 0 1px #F8F8F8 inset;
+    background-color: #F5F5F5;
+    border-color: #BDBDBD;
+}
+.skin-top-right {
+    background-image: url("img/top_right.jpg");
+}
+.skin-right-hack, body {
+    background-color: #FFFFFF;
+}
+
+.seperator-li {
+    color:#D7C8BB;
+}
+/**
+	main tab颜色样式
+*/
+/* .frame-main  */ul.tabs:first-child li a.tabs-inner{
+  background: -webkit-linear-gradient(top,#FEFFFF 0,#DAE8F6 100%);
+  background: -moz-linear-gradient(top,#FEFFFF 0,#DAE8F6 100%);
+  background: -o-linear-gradient(top,#FEFFFF 0,#DAE8F6 100%);
+  background: linear-gradient(to bottom,#FEFFFF 0,#DAE8F6 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FEFFFF,endColorstr=#DAE8F6,GradientType=0);
+  
+  border-color: #B9C4CF;
+  color: #6A6A6A;
+}
+/* .frame-main  */ul.tabs:first-child li:hover a.tabs-inner{
+  background: -webkit-linear-gradient(top,#FFFFFF 0,#BDD0E2 100%);
+  background: -moz-linear-gradient(top,#FFFFFF 0,#BDD0E2 100%);
+  background: -o-linear-gradient(top,#FFFFFF 0,#BDD0E2 100%);
+  background: linear-gradient(to bottom,#FFFFFF 0,#BDD0E2 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF,endColorstr=#BDD0E2,GradientType=0);
+  
+  border-color: #A1ACB8;
+}
+/* .frame-main  */ul.tabs:first-child li.tabs-selected a.tabs-inner{
+  background: -webkit-linear-gradient(top,#196FC6 0,#135BA5 100%);
+  background: -moz-linear-gradient(top,#196FC6 0,#135BA5 100%);
+  background: -o-linear-gradient(top,#196FC6 0,#135BA5 100%);
+  background: linear-gradient(to bottom,#196FC6 0,#135BA5 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#196FC6,endColorstr=#135BA5,GradientType=0);
+  
+  border-color: #135AA4;
+  color: #FFFFFF;
+}
+/**
+	end main tab颜色样式
+*/

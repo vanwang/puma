@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<!--[if IEMobile 7]><html class="no-js iem7 oldie"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if (IE 9)&!(IEMobile)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Puma framework 文档</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- http://davidbcalhoun.com/2010/viewport-metatag -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- For all browsers -->
+	<link rel="stylesheet" href="css/reset.css?v=1">
+	<link rel="stylesheet" href="css/style.css?v=1">
+	<link rel="stylesheet" href="css/colors.css?v=1">
+	<link rel="stylesheet" media="print" href="css/print.css?v=1">
+	<!-- For progressively larger displays -->
+	<link rel="stylesheet" media="only all and (min-width: 480px)" href="css/480.css?v=1">
+	<link rel="stylesheet" media="only all and (min-width: 768px)" href="css/768.css?v=1">
+	<link rel="stylesheet" media="only all and (min-width: 992px)" href="css/992.css?v=1">
+	<link rel="stylesheet" media="only all and (min-width: 1200px)" href="css/1200.css?v=1">
+	<link rel="stylesheet" href="css/992.css?v=1">
+	<link rel="stylesheet" href="css/1200.css?v=1">
+	<!-- For Retina displays -->
+	<link rel="stylesheet" media="only all and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" href="css/2x.css?v=1">
+
+	<!-- Additional styles -->
+	<link rel="stylesheet" href="css/styles/dashboard.css?v=1">
+	<link rel="stylesheet" href="css/styles/files.css?v=1">
+	<link rel="stylesheet" href="css/styles/progress-slider.css?v=1">
+	<link rel="stylesheet" href="css/styles/modal.css?v=1">
+
+	<!-- JavaScript at bottom except for Modernizr -->
+	<script src="js/libs/modernizr.custom.js"></script>
+
+	<!-- iOS web-app metas -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- Startup image for web apps -->
+	<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+	<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+	<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+	<!-- Microsoft clear type rendering -->
+	<meta http-equiv="cleartype" content="on">
+</head>
+
+<body class="clearfix with-menu reversed">
+
+	<!-- Prompt IE 6 users to install Chrome Frame -->
+	<!--[if lt IE 7]><p class="message red-gradient simpler">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+	<!-- Title bar -->
+	<!-- <header role="banner" id="title-bar">
+		<h2>Puma framework 文档</h2>
+	</header> -->
+
+	<!-- Button to open/hide menu -->
+	<a href="#" id="open-menu"><span>Menu</span></a>
+
+	<!-- Main content -->
+	<section role="main" id="main">
+
+		<noscript class="message black-gradient simpler">Your browser does not support JavaScript! Some features won't work as expected...</noscript>
+
+		<hgroup id="main-title" class="thin">
+			<h1>Puma framework 文档</h1>
+			<h2>v<strong>1.0</strong><span style="font-size:12px;padding:0 5px;">beta</span></h2>
+		</hgroup>
+
+		<div class="with-padding">
+
+			<div class="boxed left-border large-margin-bottom" id="intro">
+				<h2 class="thin small-margin-bottom">您好!</h2>
+				<p>欢迎查看Puma framework文档，该文档详细描述了Puma framework的技术特点、使用方法以及开发方法，并且提供作者所搜集的一些技术资料，欢迎下载。
+				部分书籍有版权,仅供方便大家学习使用，请勿用作商业化用途。
+				<br><br>如果对Puma framework有任何问题或者建议，欢迎来信:boyuan2000cn@163.com，或者QQ:188134548，很高兴跟大家一起讨论问题。
+				<br>
+				<br>系统开发者本人主要从事软件质量保证和软件开发领域的工作。
+				软件质量方面，对自动化测试、测试管理比较熟悉。
+				开发语言方面，对Java、HTML，CSS、Javascript、Flex、XML比较熟悉，VC++略懂，做过两个项目，
+				数据库方面，对MySQL，DB2，Sybase, Redis(No SQL)比较熟悉。
+				框架应用方面，熟悉Eclipse plugin development, Spring framework，Spring Data， Spring Security， iBatis, Hibernate, Struts，Hadoop(HDFS+MapReduce)。
+				以上都是以前做过项目中涉及到的一些技术，比较杂，由于量多，所以研究不算很深入，但是也曾遇到过并解决过很多问题，如果有这方面的技术问题，欢迎大家一起讨论、提高！
+				</p>
+				<p class="intro"><strong>Van</strong></p>
+				<p class="intro"><strong>2013年3月</strong></p>
+			</div>
+
+			<p class="intro">使用左边的导航来查看所有的文档内容，下面是对文档结构的简单描述。</p>
+
+			<h4 class="black">模块使用说明</h4>
+			<p>该部分详细介绍了Puma framework所包括的系统登录、用户管理、资源管理、角色管理、菜单管理和皮肤管理等六大基础模块的使用方法。</p>
+
+			<h4 class="black">开发说明</h4>
+			<p>该部分介绍了如何利用Puma framework来快速的开发自己的系统，包括开发环境搭建、前端页面开发和后台开发。</p>
+
+			<h4 class="black">常用开发手册及书籍下载</h4>
+			<p>该部分是作者长年所搜集的技术资料和书籍，不断更新中......</p>
+			
+			<h4 class="black">声明</h4>
+			<p>该部分包含系统的版权说明和免责声明。</p>
+		</div>
+
+	</section>
+
+	<!-- Sidebar/drop-down menu -->
+	<section id="menu" role="complementary">
+
+		<!-- This wrapper is used by several responsive layouts -->
+		<div id="menu-content">
+
+			<header>
+			Puma framework
+			</header>
+
+			<a href="./" id="profile">
+				<span class="name"><b>Puma</b> framework</span>
+				文档说明+开发手册
+			</a>
+
+			<!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->
+			<ul id="access" class="children-tooltip">
+				<li><a href="content/info.html" title="版本说明"><span class="icon-info-round"></span><span class="count">1.0</span></a></li>
+				<li><a href="content/credits.html" title="鸣谢"><span class="icon-heart"></span></a></li>
+				<li><a href="content/developer-intro.html" title="开发者介绍"><span class="icon-user"></span></a></li>
+				<li><a href="content/develop-plan.html" title="开发计划"><span class="icon-calendar"></span></a></li>
+			</ul>
+
+			<section class="navigable" id="doc-menu">
+				<ul class="big-menu">
+					<li><a href="content/system-intro.html" title="Plugins basics">系统介绍</a></li>
+					<li class="with-right-arrow">
+						<span>模块使用说明</span>
+						<ul class="big-menu">
+							<li><a href="content/module-intro/login/login.html" title="Plugins basics">系统登录</a></li>
+							<li><a href="content/module-intro/user-management/user-management.html" title="Basic markup explained">用户管理</a></li>
+							<li><a href="content/module-intro/resource-management/resource-management.html" title="Basic markup explained">资源管理</a></li>
+							<li><a href="content/module-intro/role-management/role-management.html" title="Basic markup explained">角色管理</a></li>
+							<li><a href="content/module-intro/menu-management/menu-management.html" title="Basic markup explained">菜单管理</a></li>
+							<li><a href="content/module-intro/skin-management/skin-management.html" title="Basic markup explained">皮肤管理</a></li>
+						</ul>
+					</li>
+					<li class="title-menu">开发说明</li>
+					<li><a href="content/develop-intro/setup-environment.html" title="Plugins basics">开发环境搭建</a></li>
+					<li><a href="content/reference/plugins.html" title="Plugins basics">后台模块开发</a></li>
+					<li><a href="content/reference/plugins.html" title="Plugins basics">前端页面开发</a></li>
+					<li><a href="content/deployment/deploy.html" title="Plugins basics">系统发布</a></li>
+					<li class="title-menu">常用开发手册及书籍下载</li>
+					<li><a href="content/manualbooks/manuals.html" title="Plugins basics">常用开发手册下载</a></li>
+					<li><a href="content/manualbooks/books.html" title="Plugins basics">技术书籍下载</a></li>
+					<li class="title-menu">声明</li>
+					<li><a href="content/reference/plugins.html" title="Plugins basics">系统版权</a></li>
+					<li><a href="content/reference/plugins.html" title="Plugins basics">免责声明</a></li>
+				</ul>
+			</section>
+
+		</div>
+
+	</section>
+	<!-- End sidebar/drop-down menu -->
+
+	<!-- JavaScript at the bottom for fast page loading -->
+
+	<!-- Scripts -->
+	<script src="../resources/jquery.js"></script>
+	<script src="js/setup.js"></script>
+
+	<!-- Template functions -->
+	<script src="js/developr.navigable.js"></script>
+	<script src="js/developr.scroll.js"></script>
+	<script src="js/developr.content-panel.js"></script>
+	<script src="js/developr.progress-slider.js"></script>
+	<script src="js/developr.tabs.js"></script>		<!-- Must be loaded last -->
+
+	<!-- Hashchange polyfill -->
+	<script src="js/libs/jquery.ba-hashchange.js?v=1"></script>
+
+	<script>
+
+		var win = $(window),
+			bod = $(document.body),
+			main = $('#main'),
+			init = false;
+
+		// Ajax navigation
+		$(document).on('click', 'a', function(event)
+		{
+			var link = $(this),
+				href = link.attr('href'),
+				docmenu;
+
+			// Some elements from the doc shouldn't be processed
+			if (link.closest('#main').length > 0 && link.closest('.navigable, .collapsible').length > 0)
+			{
+				return;
+			}
+
+			// If local link
+			if (href && !href.match(/^(https?:|#|\.\/|javascript:)/))
+			{
+				event.preventDefault();
+				window.location.hash = '#'+href;
+				if (!bod.parent().hasClass('hashchange'))
+				{
+					win.hashchange();
+				}
+
+				// If in menu, add visual indicator
+				docmenu = link.closest('#doc-menu');
+				if (docmenu.length > 0)
+				{
+					docmenu.find('.current').removeClass('current');
+					link.addClass('current');
+				}
+			}
+		});
+
+		// Listen to hash changes
+		win.hashchange(function(event)
+		{
+			var hash = $.trim(window.location.hash || '');
+			if (hash.length > 1)
+			{
+				main.load(hash.substring(1), function()
+				{
+					// Code display
+					//prettyPrint();
+
+					// Scroll
+					if (init)
+					{
+						bod.animate({
+							scrollTop: 0
+						});
+					}
+				});
+			}
+			else
+			{
+				window.location.reload();
+			}
+		});
+
+		// Init
+		if (window.location.hash && window.location.hash.length > 1)
+		{
+			win.hashchange();
+		}
+		init = true;
+
+		// Documentation won't work on local files with chrome
+		if (document.location.protocol === 'file:' && navigator.userAgent.match(/Chrome/))
+		{
+			$.modal.alert('<p>The documentation won\'t work on Chrome because you opened it as a local file. Place files on any web server to browse it safely.</p>Or use another modern brower, but Chrome just rocks...');
+		}
+
+	</script>
+
+	<script>
+
+		// Current version
+		var thisVersion = 1.4;
+		if (currentVersion)
+		{
+			if (currentVersion > thisVersion)
+			{
+				$('#intro').message('A new version of the template is available! Click here to go to your download page &raquo;', {
+					node:		'a',
+					link:		'http://themeforest.net/',
+					classes:	['align-center', 'blue-gradient'],
+					position:	'bottom',
+					append:		false
+				});
+			}
+			else
+			{
+				$('#intro').message('You have the latest version of the template', {
+					classes:	['align-center', 'green-gradient'],
+					position:	'bottom',
+					append:		false
+				});
+			}
+		}
+		else
+		{
+			$('#intro').message('Error while checking template current version', {
+				classes:	['align-center', 'red-gradient'],
+				position:	'bottom',
+				append:		false
+			});
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+[{
+	"id":"link-AditionModule",
+    "text":"个人设置",  
+    "attributes":{  
+		    "hash":"#module=AditionModule|{}"
+		} 
+},
+{
+	"id":"link-ChangeSkinModule",
+    "text":"更换皮肤",  
+    "attributes":{  
+		    "hash":"#module=ChangeSkinModule|{}"
+		} 
+},{  
+    "text":"Languages",  
+    "children":[{  
+        "text":"Java"  
+    },{  
+        "text":"C#"  
+    }]  
+}]

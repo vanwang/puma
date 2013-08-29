@@ -1,0 +1,64 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>打包发布</h1>
+</hgroup>
+
+<div class="with-padding">
+	<h3 class="thin"><a href="#000" name="001">安装数据库</a></h3>
+	<p>
+		1. 选择mysql的命令行工具
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-sql-01.jpg" width="700px">
+	<p>
+		2. 输入管理员密码，进入mysql控制界面
+	</p>
+	<p>
+		3. 输入:create database puma;创建名称为puma的数据库。
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-sql-02.jpg" width="700px">
+	<p>
+		4. 输入:use puma;使用上一步创建的puma数据库。
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-sql-03.jpg" width="700px">
+	<p>
+		5. 输入:source {sql文件的绝对路径}，sql文件为puma工程的document/database/db20130327.bak,回车
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-sql-04.jpg" width="700px">
+	<p>
+		6. 数据库安装完成。
+	</p>
+	
+	
+	<h3 class="thin"><a href="#000" name="001">打包发布</a></h3>
+	<p>
+		1. 在Run->Run Configurations栏目中，输入下图相关信息。
+	</p>
+	<div class="wrapped margin-bottom left-icon icon-info-round">
+		<span style="font-weight:bold;">注</span>：由于在发布Puma framework的时候，需要进行HTML，JS，CSS文件的压缩优化，需要Minify HTML Maven插件，但是我没有将该插件放在公用的Maven库中，如果你已经导入了这个插件的工程，
+		请勾选上：Resolve workspace artifacts
+	</div>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-01.jpg" width="700px">
+	<p>
+		2. 运行成功后，eclipse会提示下图中的成功信息，并且在target目录下生成了一个已经压缩好的war包。
+	</p>
+	<div class="wrapped margin-bottom left-icon icon-info-round">
+		<span style="font-weight:bold;">注</span>：开发环境和发布环境的数据库信息可能不一样，注意修改数据库名称和密码。
+	</div>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-02.jpg" width="700px">
+	<br><br><img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-03.jpg" width="300px">
+	
+	<p>
+		3. 拷贝war包到tomcat的webapp目录下，包名可以自行修改。
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-04.jpg" width="700px">
+	
+	<p>
+		4. 点击tomcat/bin/目录下的startup.bat文件，启动tomcat。
+	</p>
+	<img alt="从SVN导入工程界面" src="img/puma/deployment/deployment-05.jpg" width="700px">
+	
+	<p>
+		5. tomcat自动解压war包，启动以后，您就可以打开浏览器，输入http://localhost:8080/puma/访问系统了。
+		默认的用户名是test@test.com,密码是123456.
+	</p>
+</div>

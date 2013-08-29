@@ -1,0 +1,70 @@
+.icon-blank{
+	background:url('icons2/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('icons2/add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('icons2/edit.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('icons2/remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('icons2/showreel.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('icons2/refresh.png') no-repeat center center;
+}
+.icon-category{
+	background:url('icons2/category.png') no-repeat center center;
+}
+.icon-folder{
+	background:url('icons2/folder.png') no-repeat center center;
+}
+.icon-check{
+	background:url('icons2/publish.png') no-repeat center center;
+}
+.icon-uncheck{
+	background:url('icons2/uncheck.png') no-repeat center center;
+}
+.icon-suppliers{
+	background:url('icons2/suppliers.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons2/search.png') no-repeat center center;
+}
+.icon-resetpass{
+	background:url('icons2/administrative-docs.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('icons2/lock.png') no-repeat center center;
+}
+.icon-unlock{
+	background:url('icons2/unlock.png') no-repeat center center;
+}
+.icon-customized-link{
+	background:url('icons2/link.png') no-repeat center center !important;
+}
+.icon-customized-module{
+	background:url('icons2/delicious.png') no-repeat center center !important;
+}
+.icon-customized-module-link{
+	background:url('icons2/check.png') no-repeat center center !important;
+}
+
+#frame-main-nav .icon-customized-module-link{
+	background:url('icons2/flag.png') no-repeat center center !important;
+}
+
+.icon-sign-out{
+	background:url('icons2/sign-out.png') no-repeat center center;
+}
+.icon-none{
+	display:none !important;
+}
+
+/* module icons*/
+.module-icon-email{
+	background-image:url('icons2/module/email.png') !important;
+}

@@ -1,0 +1,87 @@
+.frame-main {
+    border-top:solid 4px #04386D;
+}
+.top-text{
+	color:white !important;
+}
+.skin-top {
+    background-color: #1262B7;
+}
+.skin-left {
+    box-shadow: -1px 0 1px #F8F8F8 inset;
+    background-color: #F5F5F5;
+    border-color: #BDBDBD;
+}
+.skin-right-hack, body {
+    background-color: #FFFFFF;
+}
+
+.seperator-li {
+    color:#D7C8BB;
+}
+/**
+	main tab颜色样式
+*/
+/* .frame-main  */ul.tabs:first-child li a.tabs-inner{
+  background: -webkit-linear-gradient(top,#0B559F 0,#0B559F 100%);
+  background: -moz-linear-gradient(top,#0B559F 0,#0B559F 100%);
+  background: -o-linear-gradient(top,#0B559F 0,#0B559F 100%);
+  background: linear-gradient(to bottom,#0B559F 0,#0B559F 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0B559F,endColorstr=#0B559F,GradientType=0);
+  
+  border-color: #1262B7;
+  color: #CCD6E5;
+}
+/* .frame-main  */ul.tabs:first-child li:hover a.tabs-inner{
+  background: -webkit-linear-gradient(top,#003F7F 0,#003F7F 100%);
+  background: -moz-linear-gradient(top,#003F7F 0,#003F7F 100%);
+  background: -o-linear-gradient(top,#003F7F 0,#003F7F 100%);
+  background: linear-gradient(to bottom,#003F7F 0,#003F7F 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#003F7F,endColorstr=#003F7F,GradientType=0);
+  
+  border-color: #A1ACB8;
+}
+/* .frame-main  */ul.tabs:first-child li.tabs-selected a.tabs-inner{
+  background: -webkit-linear-gradient(top,#04386D 0,#04386D 100%);
+  background: -moz-linear-gradient(top,#04386D 0,#04386D 100%);
+  background: -o-linear-gradient(top,#04386D 0,#04386D 100%);
+  background: linear-gradient(to bottom,#04386D 0,#04386D 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#04386D,endColorstr=#04386D,GradientType=0);
+  
+  border-color: #1262B7;
+}
+
+/* .frame-main  */.tabs-scroller-left{
+  background-color: #04386D;
+  color:white;
+}
+
+/**
+	end main tab颜色样式
+*/
+/* .frame-main-content  */.datagrid-row{
+	height:40px;
+}
+/* .frame-main-content  */.datagrid-body td{
+	border-style: solid;
+    border-width: 0 0 1px 0;
+}
+/* .frame-main-content  */.datagrid-cell, .frame-main-content .datagrid-cell-group, .frame-main-content .datagrid-cell-rownumber{
+	font-size:14px;
+}
+
+/**
+	重定义拖放指示框
+*/
+.tree-node-top {
+  border-top: 2px dashed #0B559F !important;
+}
+.tree-node-bottom {
+  border-bottom: 2px dashed #0B559F !important;
+}
+.tree-node-append .tree-title {
+  border: 2px dashed #0B559F !important;
+}

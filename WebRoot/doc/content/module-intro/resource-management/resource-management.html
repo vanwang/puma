@@ -1,0 +1,85 @@
+<meta charset="utf-8">
+<hgroup id="main-title" class="thin">
+	<h1>资源管理</h1>
+</hgroup>
+
+<div class="with-padding">
+	<div class="boxed left-border large-margin-bottom" id="intro">
+		<h3 class="thin small-margin-bottom"><a name="000" target="_self">目录</a></h3>
+		<ul class="bullet-list">
+			<li><a href="#001" target="_self">实现方式</a></li>
+			<li><a href="#002" target="_self">新增资源</a></li>
+			<li><a href="#003" target="_self">编辑资源</a></li>
+			<li><a href="#004" target="_self">删除资源</a></li>
+			<li><a href="#005" target="_self">编辑资源分组名称</a></li>
+			<li><a href="#006" target="_self">新增资源分组</a></li>
+			<li><a href="#007" target="_self">刷新资源树</a></li>
+			<li><a href="#008" target="_self">展开、收缩资源树操作</a></li>
+		</ul>
+	</div>
+			
+	<h3 class="thin"><a href="#000" name="001">实现方式</a></h3>
+	<p>
+		Puma framework的资源管理模块如下图所示，该模块提供对系统资源的新增、修改、删除、数据刷新以及资源树的展开、收缩功能。
+		<br>资源管理模块没有提供分页功能。
+		<br>前端采用HTML+CSS+JQuery+JEasyui实现。
+		<br>后台登录采用Spring framework + Spring Data + Hibernate实现。
+		<div class="wrapped margin-bottom left-icon icon-info-round">
+			<span style="font-weight:bold;">注</span>：系统在启动时候，会自动检测未添加到数据库中的controller资源,并添加到数据库中。
+			自动操作不会对资源进行分组，并且资源名称默认为：unnamed resource，用户可以自行修改名称和分组。
+			因为以前在编写系统的时候，往往需要手动的添加资源信息，这次稍微改进一下，避免繁琐的体力劳动。
+		</div>
+		<br><br>
+	</p>
+	<img alt="用户管理界面" src="img/puma/resource-management.jpg" width="800px">
+	<h3 class="thin"><a href="#000" name="002">新增资源</a></h3>
+	1. 点击资源管理界面中的"新增"按钮，弹出新增资源的表单窗口。
+	<br><br>2. 新增资源的表单窗口有2个必填项，资源名称和资源地址。
+	<ul>
+		<li>资源名称是管理员可以自己定义的，容易理解该资源的名称。</li>
+		<li>资源分组功能可以对资源进行分组，便于管理众多的资源。如果不选分组的话，则会归纳到"未分组"栏目中。</li>
+		<li>资源地址是系统中资源的相对url</li>
+		<li>是否启用复选框是表示该资源是否要对该资源进行权限判断。此种应用场景不多，但是少数时候还是有用的，
+		比如临时想要增加某个权限的验证，但是又不愿意把该资源从角色里移除，这时候就可以把该资源设置成不可用状态。</li>
+		<li>是否后台资源，该复选框目前无作用，属于预留功能。有的需要可能要将资源分成后台管理端资源和前台系统用户的资源，避免前台用户能够访问后台资源。</li>
+		<li>描述：对该资源的简单描述。</li>
+	</ul>
+	3. 用户输入完整信息后，点击"保存"按钮，如果所有表单元素正确，提示保存进度信息，保存成功后，提示保存成功，并且所添加的资源记录在所选分组的最上，页面不跳转。
+	<br><br><img alt="新增资源界面" src="img/puma/resource-management-add.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="003">编辑资源</a></h3>
+	1. 选择要编辑的资源记录，点击资源管理界面中的"编辑"按钮，弹出编辑资源的表单窗口，窗口为非模态窗口。
+	<br><br>2. 鼠标双击要编辑的资源记录，弹出编辑用户的表单窗口，窗口为非模态窗口。
+	<br><br>3. 资源编辑的表单自动加载所选择资源的相关信息。
+	<br><br>4. 如果没有选择资源，就点击了"编辑"按钮，需要提示用户先选择资源后，再进行编辑工作。
+	<br><br>5. 由于编辑窗口是非模态的，所以用户可以继续点击每条资源信息，所选择资源的详细信息会在编辑窗口加载。
+	<br><br>6. 用户修改完信息后，点击"保存"按钮，如果所有表单元素正确，提示保存进度信息，保存成功后，提示保存成功，并且所编辑的资源记录在当前表单原位置，页面不跳转。
+	<br><br><img alt="编辑资源界面" src="img/puma/resource-management-edit.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="004">删除资源</a></h3>
+	1. 选择要删除的资源，点击资源管理界面中的"删除"按钮，弹出确认窗口。
+	<br><br>2. 点击"确认"按钮，提示删除进度信息，删除成功后，提示删除资源成功，页面不跳转
+	<br><br>3. 点击"取消"按钮，确认窗口消失。
+	<br><br><span style="font-weight:bold;">注</span>：最好不要删除系统的controller资源，因为系统在启动时候，会自动检测未添加到数据库中的controller资源,并添加到数据库中。
+	<br><br><img alt="删除资源界面" src="img/puma/resource-management-delete.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="005">编辑资源分组名称</a></h3>
+	1. 选择要编辑的资源组，点击资源管理界面中的"编辑"按钮，弹出编辑组的输入提示窗口。
+	<br><br>2. 鼠标双击要编辑的资源组，弹出编辑组的输入提示窗口。
+	<br><br>4. 如果没有选择资源组，就点击了"编辑"按钮，需要提示用户先选择资源组后，再进行编辑工作。
+	<br><br>6. 用户修改完信息后，点击"保存"按钮，如果所有表单元素正确，提示保存进度信息，保存成功后，提示保存成功，并且所编辑的资源组名称已经改变，页面不跳转。
+	<br><br><img alt="编辑资源分组名称界面" src="img/puma/resource-management-edit-group.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="006">新增资源分组</a></h3>
+	1. 资源的分组可以在资源编辑中快捷增加。在资源分组的下拉框的最后一个选项，选择"新建分组"选项，弹出"新建分组"信息提示框。
+	<br><br>2. 输入新增分组的名称。
+	<br><br>3. 点击"保存"按钮，提示保存进度信息，保存成功后，提示新增资源组成功，并且所增加的资源组名称默认选择，页面不跳转。
+	<br><br><img alt="编新增资源分组界面" src="img/puma/resource-management-add-group.jpg" width="800px">
+	
+	<h3 class="thin"><a href="#000" name="007">刷新资源树</a></h3>
+	1. 点击资源管理界面中的"刷新"按钮，资源树中间出现加载进度信息，加载成功后消息。
+	
+	<h3 class="thin"><a href="#000" name="008">展开、收缩资源树操作</a></h3>
+	1. 点击资源管理界面中的"全部展开"或者"全部收起"按钮，资源树相应的全部展开或者全部收起。
+	<br><br><img alt="资源树操作界面" src="img/puma/resource-management-collapse.jpg" width="800px">
+</div>

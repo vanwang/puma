@@ -1,0 +1,88 @@
+$.initialize = function() {
+	//存储首页tab标签对应的url hash地址
+	url_hash_map = new Map();
+	url_hash_map.put("asdf","asdf");
+	
+	$('#main-tab').tabs({  
+		fit:true,
+		plain:true,
+        border:false,  
+        onSelect:function(title){  
+            alert(title+' is selected');  
+        }  
+    });  
+    
+	$(window).hashchange( function(){
+	    var page = location.hash;
+	    if (!page) return;
+	    
+	    page = page.substring(1, page.length);
+	    page = eval(page);
+	    
+	    var moduleName = (page[0].module);
+	    if (!moduleName) return;
+	    
+	    easyloader.load(moduleName, function(){
+	    	//TODO set window title
+	    	var module = eval(moduleName);
+	    	if(!module){
+	    		alert("plugin "+moduleName+"not initialized");
+	    		return;
+	    	}
+	    	var title = module.title;
+	    	if(title==undefined) {
+		    	document.title = "未命名模块";
+		    } else {
+		    	document.title = title + " - PUMA CMS";
+		    }
+	    	//TODO set navigator
+	    	
+	    	//TODO set content
+	    	if($("#"+module.id).length>0){
+	    		//查找是否已经加载过模块，如果加载，只需要选择该模块。由于easyui没有提供更具id来查找tab，所以只能通过手工的方式查找index
+	    		var index = $("#"+module.id).parent().parent().children().index($("#"+module.id).parent())
+	    		$("#main-tab").tabs('select',index);
+	    		return;
+	    	}else{
+	    		$("#main-tab").tabs('add',{ 
+		    		id:module.id,
+		    	    title:module.title,  
+		    	    closable:true,
+		    	    href:module.contenturl,
+		    	    selected:true,
+		    	    onLoad: function(title){
+		    	    	alert("333");
+		    	    	module.init.call();
+					},
+					onAdd: function(){
+						alert("111");
+						//保存该tab对应的location hash
+			    		url_hash_map.put(module.id, window.location.hash);
+					},
+					onClose: function(){
+						alert("222");
+						//删除该tab对应的location hash
+			    		url_hash_map.remove(module.id, window.location.hash);
+					}
+		    	}); 
+	    	}
+	    	
+			//jQuery.parser.parse();
+		});
+	    /*if($(page).length>0) {
+	    	  if(title==undefined) {
+		    	document.title = "为命名模块"
+		    } else {
+		    	document.title = title + " - PUMA CMS";
+		    }
+	    } else {
+	    	alert("The page <strong>"+page+"</strong> was not found.");
+	    }*/
+	});
+
+}
+
+//Initializing of the Pastel Dashboard!
+$(document).ready(function() {
+	$.initialize();
+});
